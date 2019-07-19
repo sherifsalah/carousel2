@@ -1,0 +1,209 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: #444;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.carousel-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 5rem auto;
+  height: 40vh;
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+  border: 0.25rem solid #111;
+}
+.carousel-navigation-button {
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  margin: 2rem 12px;
+  z-index: 10;
+}
+.carousel-navigation-button:checked {
+  outline-color: #8f8;
+}
+
+.carousel-navigation-button:checked:nth-of-type(1) ~ .carousel-body {
+  left: 0%;
+}
+.carousel-navigation-button:checked:nth-of-type(2) ~ .carousel-body {
+  left: -100%;
+}
+.carousel-navigation-button:checked:nth-of-type(3) ~ .carousel-body {
+  left: -200%;
+}
+.carousel-navigation-button:checked:nth-of-type(4) ~ .carousel-body {
+  left: -300%;
+}
+.carousel-navigation-button:checked:nth-of-type(5) ~ .carousel-body {
+  left: -400%;
+}
+.carousel-navigation-button:checked:nth-of-type(6) ~ .carousel-body {
+  left: -500%;
+}
+.carousel-navigation-button:checked:nth-of-type(7) ~ .carousel-body {
+  left: -600%;
+}
+.carousel-navigation-button:checked:nth-of-type(8) ~ .carousel-body {
+  left: -700%;
+}
+.carousel-navigation-button:checked:nth-of-type(9) ~ .carousel-body {
+  left: -800%;
+}
+.carousel-navigation-button:checked:nth-of-type(10) ~ .carousel-body {
+  left: -900%;
+}
+.carousel-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000%;
+  height: 100%;
+  -webkit-transition: left 0.4s;
+  transition: left 0.4s;
+  display: flex;
+}
+.carousel-item {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-item > *:only-child {
+  display: block;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 575.98px) {
+  .carousel-container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .carousel-container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .carousel-container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .carousel-container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .carousel-container {
+    width: 50%;
+  }
+}
+.carousel > input[type="radio"]:checked ~ .carousel-target-button.prev > label,
+.carousel > input[type="radio"]:checked ~ .carousel-target-button.next > label {
+  opacity: 0;
+}
+.carousel-container > input[type="radio"]:first-child:checked ~ .carousel-target-button.prev > label:last-child,
+.carousel-container > input[type="radio"]:last-child:checked ~ .carousel-target-button.next > label:first-child,
+.carousel-container > input[type="radio"]:nth-child(2):checked ~ .carousel-target-button.prev > label:nth-child(1),
+.carousel-container > input[type="radio"]:nth-child(3):checked ~ .carousel-target-button.prev > label:nth-child(2),
+.carousel-container > input[type="radio"]:nth-child(4):checked ~ .carousel-target-button.prev > label:nth-child(3),
+.carousel-container > input[type="radio"]:nth-child(5):checked ~ .carousel-target-button.prev > label:nth-child(4),
+.carousel-container > input[type="radio"]:nth-child(6):checked ~ .carousel-target-button.prev > label:nth-child(5),
+.carousel-container > input[type="radio"]:nth-child(7):checked ~ .carousel-target-button.prev > label:nth-child(6),
+.carousel-container > input[type="radio"]:nth-child(8):checked ~ .carousel-target-button.prev > label:nth-child(7),
+.carousel-container > input[type="radio"]:nth-child(9):checked ~ .carousel-target-button.prev > label:nth-child(8),
+.carousel-container > input[type="radio"]:nth-child(10):checked ~ .carousel-target-button.prev > label:nth-child(9),
+.carousel-container > input[type="radio"]:nth-child(1):checked ~ .carousel-target-button.next > label:nth-child(2),
+.carousel-container > input[type="radio"]:nth-child(2):checked ~ .carousel-target-button.next > label:nth-child(3),
+.carousel-container > input[type="radio"]:nth-child(3):checked ~ .carousel-target-button.next > label:nth-child(4),
+.carousel-container > input[type="radio"]:nth-child(4):checked ~ .carousel-target-button.next > label:nth-child(5),
+.carousel-container > input[type="radio"]:nth-child(5):checked ~ .carousel-target-button.next > label:nth-child(6),
+.carousel-container > input[type="radio"]:nth-child(6):checked ~ .carousel-target-button.next > label:nth-child(7),
+.carousel-container > input[type="radio"]:nth-child(7):checked ~ .carousel-target-button.next > label:nth-child(8),
+.carousel-container > input[type="radio"]:nth-child(8):checked ~ .carousel-target-button.next > label:nth-child(9),
+.carousel-container > input[type="radio"]:nth-child(9):checked ~ .carousel-target-button.next > label:nth-child(10) {
+  opacity: 1 !important;
+  z-index: 10;
+}
+.carousel-target-button.prev > label,
+.carousel-target-button.next > label {
+  cursor: pointer;
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 5;
+}
+.carousel-target-button.prev > label:hover,
+.carousel-target-button.prev > label:focus,
+.carousel-target-button.next > label:hover,
+.carousel-target-button.next > label:focus {
+  opacity: 0.5 !important;
+}
+.carousel-target-button.prev > label:before,
+.carousel-target-button.prev > label:after,
+.carousel-target-button.next > label:before,
+.carousel-target-button.next > label:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+.carousel-target-button.prev > label:before,
+.carousel-target-button.next > label:before {
+  background: linear-gradient(to top, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%), linear-gradient(to left, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
+  width: 60%;
+  height: 60%;
+  top: 20%;
+}
+.carousel-target-button.prev > label {
+  left: 2%;
+}
+.carousel-target-button.prev > label:before {
+  left: 35%;
+  top: 20%;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.carousel-target-button.next > label {
+  right: 2%;
+}
+.carousel-target-button.next > label:before {
+  left: 10%;
+  transform: rotate(315deg);
+  -webkit-transform: rotate(315deg);
+}
