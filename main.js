@@ -17,7 +17,6 @@ fetch("./server.php")
         // none
       }
     });
-    console.log(html);
     document.querySelector(".carousel-body").innerHTML = html;
     let navs = document.querySelectorAll("[type='radio']");
     navs.forEach((el, index) => {
@@ -30,9 +29,10 @@ fetch("./server.php")
       radio += `<input type="radio" name="navigator" id="slide-${i}" class="carousel-navigation-button" />`;
       label += `<label for="slide-${i}"></label>`;
     }
-    console.log(document.querySelectorAll(".carousel-target-button"));
     document.querySelector(".carousel-body").insertAdjacentHTML("beforebegin", radio);
     let btns = document.querySelectorAll(".carousel-target-button");
     btns[0].innerHTML = label;
     btns[1].innerHTML = label;
+    let body = document.querySelector(".carousel-body");
+    body.style.width = length * 100 + "%";
   });
